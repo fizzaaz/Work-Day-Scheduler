@@ -11,19 +11,32 @@ function generatePlanner(time, timeText) {
     $col3El.append($saveIconEl);
     //append all three coloumns in a row
     $rowEl.append($col1El, $col2El, $col3El);
+    var currentTime= 3;
+    //present
+    if(currentTime===time)
+    {
+        $col2El.css("background","red")
+    }
+    else if(currentTime>time)
+    {
+        $col2El.css("background","grey")    //past
+    }
+    else
+    {
+        $col2El.css("background","green")    //future    
+
+   
+    }
     $(".container").append($rowEl);
+
 }
 
 function currentTime()
 {
-    return moment().format('H')
-    //past
-    //present
-    //future    
+    
 }
 $(document).ready(function () {
-    alert(    moment().format('H')
-    )
+    //alert(new Date().getHours());
     //display current day on the top
     $('#currentDay').css("font-weight","bold").text(moment().format('dddd, MMMM Do, YYYY')); 
      // 'Friday, June 24, 2016 1:42 AM'
