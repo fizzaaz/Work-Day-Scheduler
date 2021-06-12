@@ -6,8 +6,8 @@ This project was designed as a homework assignment for UT Austin coding bootcamp
 ## Getting Started
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
 
-* [GitHub Repository](https://github.com/fizzaaz/Code-Quiz)
-* [Deployed GitHub IO](https://fizzaaz.github.io/Code-Quiz/)
+* [GitHub Repository](https://github.com/fizzaaz/Work-Day-Scheduler)
+* [Deployed GitHub IO](https://fizzaaz.github.io/Work-Day-Scheduler/)
 
 ### Prerequisites
 
@@ -19,6 +19,8 @@ To install this code, download the zip file, or use GitHub's guidelines to clone
 
 ### Summary
 This application emphasizes the use of Jquery to provide a simple planner application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery. In this application, we have used the Moment.js library to work with date and time. This planner app, loops through the typical business hours at current date and allows the user to enter and save their plan into any description field that has a class of future. Also, the localStorage of the browser is used to store the data. The past hours are highlighted gray, the current hour red, and future hours green.
+
+![](assets/images/SS.JPG)
 
 ### Features: 
 * Current Date
@@ -39,13 +41,9 @@ This application emphasizes the use of Jquery to provide a simple planner applic
 * Save Button
     * This allows the user to save their plan at a specific business hour in a local storage.
 
-![](assets/images/SB.JPG)
- 
 * Local Storage 
     * It is used to store the user's plan at specific time. The set and get methods are used to store and fetch the data from local storage respectively.
     
- ![](assets/images/LS.JPG)
-
 * Color-coded
     * The three colors are used to indicate the past, present and future event. Grey color indicates that time is past, red indicates that the time is present and green shows that time is future.
 
@@ -89,3 +87,4 @@ This application emphasizes the use of Jquery to provide a simple planner applic
         * For Loops
         * Functions 
         * Local Storage set and get function
+ 
