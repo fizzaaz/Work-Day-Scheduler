@@ -2,14 +2,13 @@ function generatePlanner(time, time_24, timeText) {
 
     //creating row for each hour plan
     var $rowEl = $('<div>').addClass("row py-1");
-    $rowEl.attr("id", time_24)
     $rowEl.attr("value", time_24);
     //create 3 coloumns blocks to display time, text and save button
     var $col1El = $('<div>').addClass("col-2 py-3 bg-warning align-middle");//to display time
     var $timeEl = $('<h5>').addClass("text-center").text(time + timeText);
     $col1El.append($timeEl);
     var $col2El = $('<textarea>').addClass("col-8 py-3 overflow-auto border border-primary");//to write text
-    $rowEl.attr("id", "textArea")
+    $col2El.attr("id","id"+time_24)
     var $col3El = $('<button>').addClass("saveBtn col-1 py-3 btn btn-success btn-block");//save btn
     var $saveIconEl = $('<i>').addClass('fas fa-save')//save icon
     $col3El.append($saveIconEl);
@@ -32,6 +31,19 @@ function generatePlanner(time, time_24, timeText) {
     $(".container").append($rowEl);
 }
 
+function setPlan(timeOfday, plan) {
+    localStorage.setItem(timeOfday, plan);
+}
+function getPlan(time)
+{ 
+//var plan = localStorage.getItem(time);
+let inputval = localStorage.getItem(time)
+if(true){
+ //  $("input").data(`input${hour}`)
+ var text= $(`#id`+time).val(inputval)
+ console.log(text)
+}
+}
 $(document).ready(function () {
     //
     //display current day on the top
@@ -50,19 +62,16 @@ $(document).ready(function () {
             //passing i to change the bgcolor using time-24hr
             generatePlanner(time, i, ":00 PM")//noon
         }
+        getPlan(i)
     }
     //when save btn is clicked
     $(".saveBtn").on('click', function () {
 
         var timeOfday = $(this).parent().attr("value");
-        console.log(timeOfday);
-     
-var plan =$(this).siblings('textArea').val()
-console.log(plan)
-    //    var textContent = $(this).childern[1].attr("value");
-      //  localStorage.setItem(timeOfday, textContent);
-       // console.log(localStorage.getItem(timeOfday))
-       // console.log(timeOfday, textContent);   
+        var plan = $(this).siblings('textArea').val()
+        setPlan(timeOfday, plan);
+
     });
+
 
 });
