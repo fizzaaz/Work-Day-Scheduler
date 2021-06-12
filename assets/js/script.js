@@ -8,7 +8,7 @@ function generatePlanner(time, time_24, timeText) {
     var $timeEl = $('<h5>').addClass("text-center").text(time + timeText);
     $col1El.append($timeEl);
     var $col2El = $('<textarea>').addClass("col-8 py-3 overflow-auto border border-primary");//to write text
-    $col2El.attr("id","id"+time_24)
+    $col2El.attr("id", "id" + time_24)
     var $col3El = $('<button>').addClass("saveBtn col-1 py-3 btn btn-success btn-block");//save btn
     var $saveIconEl = $('<i>').addClass('fas fa-save')//save icon
     $col3El.append($saveIconEl);
@@ -34,15 +34,11 @@ function generatePlanner(time, time_24, timeText) {
 function setPlan(timeOfday, plan) {
     localStorage.setItem(timeOfday, plan);
 }
-function getPlan(time)
-{ 
-//var plan = localStorage.getItem(time);
-let inputval = localStorage.getItem(time)
-if(true){
- //  $("input").data(`input${hour}`)
- var text= $(`#id`+time).val(inputval)
- console.log(text)
-}
+function getPlan(time) {
+    let plan = localStorage.getItem(time)
+    if (true) {
+        var text = $(`#id` + time).val(plan)
+    }
 }
 $(document).ready(function () {
     //
@@ -64,12 +60,20 @@ $(document).ready(function () {
         }
         getPlan(i)
     }
+   
     //when save btn is clicked
     $(".saveBtn").on('click', function () {
-
+        //get time using row 
         var timeOfday = $(this).parent().attr("value");
+        //get plan from textarea at that time
         var plan = $(this).siblings('textArea').val()
-        setPlan(timeOfday, plan);
+        //save to local storage
+        if (plan) {
+            setPlan(timeOfday, plan);
+        }
+        else {
+            alert("Opps! Please enter your plan first")
+        }
 
     });
 
