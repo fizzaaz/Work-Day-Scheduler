@@ -6,8 +6,8 @@ This project was designed as a homework assignment for UT Austin coding bootcamp
 ## Getting Started
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
 
-* [GitHub Repository](https://github.com/fizzaaz/Code-Quiz)
-* [Deployed GitHub IO](https://fizzaaz.github.io/Code-Quiz/)
+* [GitHub Repository](https://github.com/fizzaaz/Work-Day-Scheduler)
+* [Deployed GitHub IO](https://fizzaaz.github.io/Work-Day-Scheduler/)
 
 ### Prerequisites
 
