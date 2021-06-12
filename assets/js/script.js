@@ -60,7 +60,7 @@ $(document).ready(function () {
         }
         getPlan(i)
     }
-   
+ 
     //when save btn is clicked
     $(".saveBtn").on('click', function () {
         //get time using row 
